@@ -211,6 +211,13 @@ def task_scheduler():
     pass
 
 
+def cpu_single_threaded():
+    pass
+
+def max_events():
+    pass
+
+
 def main():
     pass
 

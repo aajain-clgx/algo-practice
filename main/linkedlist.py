@@ -89,3 +89,46 @@ def is_palindrome(head):
         head = head.next
 
     return True
+
+
+class ReverseLinkedList:
+
+    def __init(self, k, node):
+        self.head = node
+        self.k = k
+
+    def _reverse_list(self, node):
+
+        current = node
+        prev = None
+        count = self.k
+
+        while count:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+            count -= 1
+
+        return prev
+
+    def _reverse_group_k(self, head):
+
+        current = head
+        count = 0
+
+        while current or count < self.k:
+            current = current.next
+            count += 1
+
+        if count == self.k:
+
+            rev_head = self._reverse_list(head)
+            head.next = self._reverse_group(current))
+            return rev_head
+
+        return head
+
+    def reverse_k_group(self):
+        rhead = self._reverse_group_k(self.head)
+        return rhead
