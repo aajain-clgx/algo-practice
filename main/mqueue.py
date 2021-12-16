@@ -6,6 +6,7 @@
 """
 
 from collections import deque
+import math
 
 
 def next_greater(arr):
@@ -111,7 +112,7 @@ def sliding_window_max(arr, k):
     queue = deque()
     result = []
 
-    for i in range(xxk,an):
+    for i in range(n):
         # Pop element from front that are outside window
         while queue and (i - queue[0] + 1) > k:
             queue.popleft()
@@ -129,7 +130,7 @@ def sliding_window_max(arr, k):
 
 
 def minimum_size_subrarry_sum_greater_K(arr, k):
-"""
+    """
     In subarray sum, try keeping prefix array to simplify
 
     P[0] = 0
@@ -141,14 +142,14 @@ def minimum_size_subrarry_sum_greater_K(arr, k):
 
     In kept in increasing order of P[i], as soon as you reach K sum,
     do not need to look further and start trimming
-"""
+    """
 
     if not arr:
         return -1
 
     n = len(arr)
-    prefix =[0] * n
-    for i in range(1,n):
+    prefix = [0] * n
+    for i in range(1, n):
         prefix[i] += prefix[i-1] + arr[i-1]
 
     queue = deque()
